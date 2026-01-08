@@ -1,0 +1,55 @@
+body {
+    font-family: Alagard, serif;
+    background-color: #0e0d0e;      
+    color: white;
+    overflow: hidden;
+    
+    display: flex;
+    justify-content: center;     
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+#desktop-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo h1 {
+    font-size: 45px;
+    margin: 0;
+    font-weight: normal;
+}
+
+
+.links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    font-size: 1.2rem;
+}
+
+/* .separator {
+    font-weight: 900;
+    margin: 0 5px;
+}
+*/
+
+a {
+    color: #056ce3; 
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    transition: transform 0.3s ease;
+    
+}
+
+a:hover {
+    color: #024d9e;
+    transform: scale(1.25);
+}
