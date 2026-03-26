@@ -32,3 +32,57 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
 }
+
+.col-esq {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--pad);
+  border-right: 1px solid var(--borda);
+}
+
+.nome {
+  font-family: var(--fonte-display);
+  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.nome--acento { color: var(--acento); }
+
+.sobre { max-width: 36ch; }
+
+.sobre__texto {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  line-height: 1.8;
+}
+
+.tag {
+  color: var(--texto);
+  font-weight: 500;
+  border-bottom: 1px solid var(--borda);
+  padding-bottom: 1px;
+}
+
+.contato { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.contato__link {
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+  width: fit-content;
+}
+.contato__link:hover { color: var(--acento); }
+
+.contato__link--acento { color: var(--acento); opacity: 0.8; }
+.contato__link--acento:hover { opacity: 1; }
+
+.rodape-ano {
+  font-size: 0.7rem;
+  color: var(--texto-suave);
+  opacity: 0.4;
+  letter-spacing: 0.08em;
+}
