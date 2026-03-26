@@ -209,3 +209,13 @@ a { color: inherit; text-decoration: none; }
   color: var(--texto-suave);
   padding: 1rem 0;
 }
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; min-height: unset; }
+  .col-esq { border-right: none; border-bottom: 1px solid var(--borda); gap: 2.5rem; }
+  .col-dir { max-height: unset; overflow-y: visible; }
+}
+
+@media (max-width: 500px) {
+  .repos-grid { grid-template-columns: 1fr; }
+}
