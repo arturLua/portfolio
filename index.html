@@ -1,17 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artur Rebeschini</title>
 
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  
+
 </head>
+
 <body>
+
+  <div class="grid">
+
+    <aside class="col-esq">
+
+      <div class="identidade">
+        <h1 class="nome">
+          Artur<br /><span class="nome--acento">Rebeschini</span>
+        </h1>
+      </div>
+
+      <div class="sobre">
+        <p class="sobre__texto">
+          Tech student focusing on
+          <span class="tag">Networks</span>,
+          <span class="tag">Cybersecurity</span> and
+          <span class="tag">Linux</span>.
+        </p>
+      </div>
+
+      <nav class="contato">
+        <a href="mailto:arturrendereco@gmail.com" class="contato__link">
+          arturrendereco@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/artur-rebeschini-18794b311/" target="_blank" rel="noopener" class="contato__link">
+          linkedin
+        </a>
+        <a href="https://github.com/arturLua" target="_blank" rel="noopener" class="contato__link contato__link--acento">
+          github ↗
+        </a>
+      </nav>
+
+      <span class="rodape-ano"><span id="year"></span></span>
+
+    </aside>
+
+
+
+    <main class="col-dir">
+
+      <div class="repos-header">
+        <span class="repos-titulo">repositories</span>
+        <!-- Ponto piscante indica que está carregando / ao vivo -->
+        <span class="repos-live" id="live-indicator" aria-hidden="true"></span>
+      </div>
+
+      <!--
+        Os cards de repositório são injetados aqui pelo script.js
+        via API pública do GitHub — sem login, sem chave de API.
+      -->
+        
+      <div class="repos-grid" id="repos-grid">
+        <div class="repo-skeleton"></div>
+        <div class="repo-skeleton"></div>
+        <div class="repo-skeleton"></div>
+        <div class="repo-skeleton"></div>
+      </div>
+
+    </main>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
