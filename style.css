@@ -1,0 +1,28 @@
+:root {
+  --fundo:        #0f0f0f;
+  --fundo-card:   #141414;
+  --borda:        #222222;
+  --texto:        #e2ddd6;
+  --texto-suave:  #555550;
+  --acento:       #FFC000;
+
+  --fonte:         'DM Mono', monospace;
+  --fonte-display: 'Fragment Mono', monospace;
+
+  --pad: clamp(1.5rem, 4vw, 3rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
