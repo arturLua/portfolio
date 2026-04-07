@@ -29,6 +29,7 @@ const CORES_LINGUAGEM = {
   Rust:       '#dea584',
   Go:         '#00ADD8',
   PHP:        '#4F5D95',
+  Kotlin:     '#A97BFF',
 };
 
 
