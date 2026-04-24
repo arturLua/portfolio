@@ -21,15 +21,15 @@
 
 /* TEMA CLARO */
 [data-theme="light"] {
-  --fundo:        #f5f2ec;
-  --fundo-card:   #edeae2;
+  --fundo:        #faf8ed;
+  --fundo-card:   #ede9d8;
   --borda:        #cbc7be;
   --texto:        #1a1916;
   --texto-suave:  #7a7570;
   --acento:       #6c43f3;
 
-  --shimmer-a:    #edeae2;
-  --shimmer-b:    #e2dfd6;
+--shimmer-a: #f0ede0;
+--shimmer-b: #e6e2cf;
 }
 
 /* RESET */
