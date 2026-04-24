@@ -1,3 +1,4 @@
+/* TEMA ESCURO (padrão) */
 :root {
   --fundo:        #0f0f0f;
   --fundo-card:   #141414;
@@ -6,15 +7,63 @@
   --texto-suave:  #6e6e6e;
   --acento:       #FFC000;
 
+  --shimmer-a:    #141414;
+  --shimmer-b:    #1c1c1c;
+
   --fonte:         'DM Mono', monospace;
   --fonte-display: 'Quantico', monospace;
 
   --pad: clamp(1.5rem, 4vw, 3rem);
+
+  /* transição */
+  --duracao-tema: 0.45s;
 }
 
+/* TEMA CLARO */
+[data-theme="light"] {
+  --fundo:        #f5f2ec;
+  --fundo-card:   #edeae2;
+  --borda:        #cbc7be;
+  --texto:        #1a1916;
+  --texto-suave:  #7a7570;
+  --acento:       #d4a000;
+
+  --shimmer-a:    #edeae2;
+  --shimmer-b:    #e2dfd6;
+}
+
+/* RESET */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { font-size: 16px; }
+
+/* TRANSIÇÃO GLOBAL DE TEMA (fade suave) */
+body,
+.col-esq,
+.col-dir,
+.repo-card,
+.repo-skeleton,
+.tag,
+.contato__link,
+.repos-titulo,
+.rodape-ano,
+.repo-card__nome,
+.repo-card__desc,
+.repo-card__lang,
+.repo-card__estrelas,
+.repos-erro,
+.repos-vazio,
+.btn-tema {
+  transition:
+    background-color var(--duracao-tema) ease,
+    background       var(--duracao-tema) ease,
+    color            var(--duracao-tema) ease,
+    border-color     var(--duracao-tema) ease,
+    opacity          var(--duracao-tema) ease,
+    fill             var(--duracao-tema) ease,
+    stroke           var(--duracao-tema) ease,
+    box-shadow       var(--duracao-tema) ease;
+}
 
 body {
   background: var(--fundo);
@@ -26,6 +75,44 @@ body {
 }
 
 a { color: inherit; text-decoration: none; }
+
+/* BOTÃO DE ALTERNAR TEMA */
+.btn-tema {
+  position: fixed;
+  top: 1.1rem;
+  right: 1.1rem;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  background: var(--fundo-card);
+  color: var(--texto-suave);
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-tema:hover {
+  border-color: var(--acento);
+  color: var(--acento);
+}
+
+.btn-tema svg {
+  transition: color var(--duracao-tema) ease, stroke var(--duracao-tema) ease;
+}
+
+/* Ícone sol (visível no modo escuro) */
+.btn-tema .icon-sun  { display: block; }
+/* Ícone lua (visível no modo claro) */
+.btn-tema .icon-moon { display: none; }
+
+[data-theme="light"] .btn-tema .icon-sun  { display: none; }
+[data-theme="light"] .btn-tema .icon-moon { display: block; }
 
 .grid {
   display: grid;
@@ -72,7 +159,6 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.83rem;
   color: var(--texto-suave);
   letter-spacing: 0.035em;
-  transition: color 0.15s;
   width: fit-content;
 }
 .contato__link:hover { color: var(--acento); }
@@ -111,6 +197,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%;
   background: var(--acento);
   animation: piscar 2s ease-in-out infinite;
+  transition: background var(--duracao-tema) ease;
 }
 
 @keyframes piscar {
@@ -133,7 +220,6 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--borda);
   border-radius: 2px;
   background: var(--fundo-card);
-  transition: border-color 0.2s;
   min-height: 110px;
 }
 .repo-card:hover { border-color: var(--acento); }
@@ -193,7 +279,12 @@ a { color: inherit; text-decoration: none; }
   height: 110px;
   border: 1px solid var(--borda);
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--fundo-card) 25%, #1c1c1c 50%, var(--fundo-card) 75%);
+  background: linear-gradient(
+    90deg,
+    var(--shimmer-a) 25%,
+    var(--shimmer-b) 50%,
+    var(--shimmer-a) 75%
+  );
   background-size: 200% 100%;
   animation: shimmer 1.4s infinite;
 }
