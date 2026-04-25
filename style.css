@@ -161,10 +161,15 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.035em;
   width: fit-content;
 }
-.contato__link:hover { color: var(--acento); }
 
-.contato__link--acento { color: var(--acento); opacity: 0.8; }
-.contato__link--acento:hover { opacity: 1; }
+.contato__link::before {
+  content: '> ';
+  color: var(--acento);
+}
+
+.contato__link:hover {
+  color: var(--acento);
+}
 
 .rodape {
   display: flex;
