@@ -1,21 +1,21 @@
 /* TEMA ESCURO (padrão) */
 :root {
-  --fundo:        #0f0f0f;
-  --fundo-card:   #141414;
-  --borda:        #373737;
-  --texto:        #e2ddd6;
-  --texto-suave:  #6e6e6e;
+  --fundo:        #0d0d0d;
+  --fundo-card:   #161616;
+  --borda:        #454545;
+  --texto:        #d4d0c8;
+  --texto-suave:  #6b6b6b;
   --acento:       #FFC000;
+  --texto-na-barra: #0d0d0d;
 
-  --shimmer-a:    #141414;
-  --shimmer-b:    #1c1c1c;
+  --shimmer-a:    #161616;
+  --shimmer-b:    #1e1e1e;
 
   --fonte:         'DM Mono', monospace;
   --fonte-display: 'Quantico', monospace;
 
   --pad: clamp(1.5rem, 4vw, 3rem);
 
-  /* transição */
   --duracao-tema: 0.25s;
 }
 
@@ -27,6 +27,7 @@
   --texto:        #1a1916;
   --texto-suave:  #7a7570;
   --acento:       #6c43f3;
+  --texto-na-barra: #ffffff;
 
 --shimmer-a: #f0ede0;
 --shimmer-b: #e6e2cf;
@@ -78,37 +79,37 @@ a { color: inherit; text-decoration: none; }
 
 /* BOTÃO DE ALTERNAR TEMA */
 .btn-tema {
-  position: fixed;
-  top: 1.1rem;
-  right: 1.1rem;
-  z-index: 100;
-
+  position: static;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border: 1px solid var(--borda);
-  border-radius: 2px;
+  border-radius: 0;
   background: var(--fundo-card);
   cursor: pointer;
   padding: 0;
+
+  box-shadow:
+    inset 1px 1px 0 #505050,
+    inset -1px -1px 0 #0a0a0a;
 }
 
 .btn-tema:hover {
   border-color: var(--acento);
-  color: var(--acento);
+  box-shadow:
+    inset 1px 1px 0 #0a0a0a,
+    inset -1px -1px 0 #505050;
 }
 
 .btn-tema svg {
   transition: color var(--duracao-tema) ease, stroke var(--duracao-tema) ease;
 }
 
-/* Ícone sol (visível no modo escuro) */
 .btn-tema .icon-sun  { display: block; color: #d8b147; }
-/* Ícone lua (visível no modo claro) */
-.btn-tema .icon-moon { display: none; color: #7758dd; }
+.btn-tema .icon-moon { display: none;  color: #7758dd; }
 
 [data-theme="light"] .btn-tema .icon-sun  { display: none; }
 [data-theme="light"] .btn-tema .icon-moon { display: block; }
@@ -165,6 +166,12 @@ a { color: inherit; text-decoration: none; }
 .contato__link--acento { color: var(--acento); opacity: 0.8; }
 .contato__link--acento:hover { opacity: 1; }
 
+.rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .rodape-ano {
   font-size: 0.7rem;
   color: var(--texto-suave);
@@ -181,22 +188,33 @@ a { color: inherit; text-decoration: none; }
   max-height: 100vh;
 }
 
-.repos-header { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+.repos-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  background: var(--acento);
+  padding: 0.3rem 0.75rem;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,0.3),
+    inset -1px -1px 0 rgba(0,0,0,0.3);
+}
 
 .repos-titulo {
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--texto-suave);
+  color: var(--texto-na-barra);
+  font-weight: 500;
 }
 
 .repos-live {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--acento);
+  background: var(--texto-na-barra);
+  opacity: 0.6;
   animation: piscar 2s ease-in-out infinite;
-  transition: background var(--duracao-tema) ease;
 }
 
 @keyframes piscar {
@@ -207,21 +225,32 @@ a { color: inherit; text-decoration: none; }
 .repos-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .repo-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 1rem;
   border: 1px solid var(--borda);
-  border-radius: 2px;
+  border-radius: 0;
   background: var(--fundo-card);
-  min-height: 110px;
+  min-height: 140px;
+  box-shadow:
+    inset 2px 2px 0 #606060,
+    inset -2px -2px 0 #080808,
+    1px 1px 0 #000;
 }
-.repo-card:hover { border-color: var(--acento); }
+
+.repo-card:hover {
+  border-color: var(--acento);
+  box-shadow:
+    inset 2px 2px 0 #080808,
+    inset -2px -2px 0 #606060,
+    1px 1px 0 #000;
+}
 
 .repo-card__nome {
   font-size: 0.82rem;
