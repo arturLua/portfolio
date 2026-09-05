@@ -1,5 +1,26 @@
+:root {
+  /* dark-first color tokens */
+  --bg: #0b0b0c;
+  --fg: #e8e8e8;
+  --fg-muted: #8a8a8a;
+  --accent: #7aa2f7;
+  --border: #1e1e20;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* roles inverted for the light theme */
+    --bg: #fafafa;
+    --fg: #1a1a1a;
+    --fg-muted: #6b6b6b;
+    --accent: #3b5bdb;
+    --border: #e4e4e7;
+  }
+}
+
 html {
-  background-color: #f1f5f9;
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: sans-serif;
 }
 
@@ -22,9 +43,9 @@ h1 {
 
 /* nav styles */
 .menu {
-  background-color: #0d0950;
+  background-color: var(--accent);
   border: none;
-  color: #fff;
+  color: var(--bg);
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 10px;
@@ -44,12 +65,12 @@ h1 {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #0d0950;
+  color: var(--accent);
 }
 
 .nav-links a:hover,
 .nav-links a:focus{
-  background-color: #ff9776;
+  background-color: var(--border);
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
