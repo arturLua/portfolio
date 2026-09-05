@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* dark-first color tokens */
   --bg: #0b0b0c;
@@ -5,6 +13,12 @@
   --fg-muted: #8a8a8a;
   --accent: #7aa2f7;
   --border: #1e1e20;
+
+  /* type scale — integer px, no decimals */
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 26px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -21,14 +35,15 @@
 html {
   background-color: var(--bg);
   color: var(--fg);
-  font-family: sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
+  max-width: var(--measure, 65ch);
   padding: 1rem;
+  font-size: var(--text-base);
   line-height: 1.5;
 }
 
@@ -38,5 +53,13 @@ body {
 
 h1 {
   margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: var(--text-xl);
+}
+
+h2 {
+  font-size: var(--text-lg);
+}
+
+small {
+  font-size: var(--text-sm);
 }
