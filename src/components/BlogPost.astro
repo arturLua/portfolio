@@ -1,4 +1,40 @@
 ---
-const { title, url } = Astro.props;
+import Tags from './Tags.astro';
+
+const { post } = Astro.props;
+const { title, pubDate, tags = [] } = post.frontmatter;
+
+const date = new Date(pubDate).toISOString().slice(0, 10);
+
+const words = (post.rawContent?.() ?? '').trim().split(/\s+/).filter(Boolean).length;
+const minutes = Math.max(1, Math.round(words / 200));
 ---
-<li><a href={url}>{title}</a></li>
+<li class="post">
+  <a class="title" href={post.url}>{title}</a>
+  <p class="meta"><small>{date} · {minutes} min read</small></p>
+  {tags.length > 0 && <Tags tags={tags} />}
+</li>
+
+<style>
+  .post {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+
+  .title {
+    color: var(--fg);
+    font-size: var(--text-lg);
+    text-decoration: none;
+  }
+
+  .title:hover,
+  .title:focus {
+    color: var(--accent);
+  }
+
+  .meta {
+    margin: 0.25rem 0 0;
+    color: var(--fg-muted);
+  }
+</style>
