@@ -1,7 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Home Page";
+const pageTitle = "Artur Rebeschini";
 ---
 <BaseLayout pageTitle={pageTitle} measure="50ch">
-  <h2>My awesome {pageTitle} subtitle</h2>
+  <h1>artur rebeschini</h1>
+  <p>it support · networks · cybersecurity</p>
+  <p><small>brazil</small></p>
+  <p class="links">
+    <a href="/blog/">blog</a> · <a href="https://github.com/arturLua">github</a> · <a href="https://www.linkedin.com/in/artur-rebeschini-18794b311/">linkedin</a>
+  </p>
 </BaseLayout>
+
+<style>
+  .links a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>
