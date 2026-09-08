@@ -1,27 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import '../styles/global.css';
-
-const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Artur",
-  country: "Brazil",
-  occupation: "Help Desk",
-  hobbies: ["videogames", "gym", "coding"],
-};
-
-const skills = ["Networks", "Software", "Tech support", "Operational Systems"];
-
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "crimson";
-const fontWeight = "bold";
-const textCase = "uppercase";
+const pageTitle = "About";
 ---
-
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome {pageTitle} subtitle</h2>
+  <h1>about</h1>
+
+  <p>
+    I'm Artur, based in Brazil. My day job is IT support, help desk work,
+    and most of what pulls my attention sits around networks and, lately,
+    cybersecurity.
+  </p>
+
+  <p>
+    Away from that, I'm teaching myself to build for the web. This site is
+    the practice ground: I put it together myself and keep changing it. I will
+    write down what I learn on the <a href="/blog/">blog</a>.
+  </p>
+
 </BaseLayout>
+
+<style>
+  a {
+    color: var(--accent);
+  }
+</style>
