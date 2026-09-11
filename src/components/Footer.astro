@@ -1,13 +1,17 @@
 ---
-import Social from './Social.astro';
+const year = new Date().getFullYear();
 ---
 
 <style>
   footer {
-    margin-top: 1rem;
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--fg-muted);
+    font-size: var(--text-sm);
   }
 </style>
 
 <footer>
-  <Social platform="github" username="arturLua" /> · <Social platform="linkedin" username="in/artur-rebeschini-18794b311/" />
+  <span>© {year} artur rebeschini</span>
 </footer>

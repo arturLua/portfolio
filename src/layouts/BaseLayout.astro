@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const { pageTitle, measure } = Astro.props;
+const hasAside = Astro.slots.has('aside');
 ---
 <html lang="en">
   <head>
@@ -12,9 +13,20 @@ const { pageTitle, measure } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body style={measure && `--measure: ${measure}`}>
-    <Header/>
-    <slot/>
-    <Footer/>
+  <body class={hasAside ? 'has-aside' : ''} style={measure && `--measure: ${measure}`}>
+    <div class="shell">
+      <Header/>
+      <div class="layout">
+        <main class="content">
+          <slot/>
+        </main>
+        {hasAside && (
+          <aside class="aside">
+            <slot name="aside"/>
+          </aside>
+        )}
+      </div>
+      <Footer/>
+    </div>
   </body>
 </html>

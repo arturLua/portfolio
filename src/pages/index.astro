@@ -1,17 +1,55 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const recentPosts = allPosts
+  .sort((a: any, b: any) =>
+    new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+  )
+  .slice(0, 3);
+
 const pageTitle = "Artur Rebeschini";
 ---
-<BaseLayout pageTitle={pageTitle} measure="50ch">
-  <h1>artur rebeschini</h1>
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Artur Rebeschini</h1>
   <p>it support · networks · cybersecurity</p>
-  <p><small>brazil</small></p>
-  <p class="links">
-    <a href="/blog/">blog</a> · <a href="https://github.com/arturLua">github</a> · <a href="https://www.linkedin.com/in/artur-rebeschini-18794b311/">linkedin</a>
+
+  <p>
+    I'm a 21 year old from Brazil. My day job is IT support and help desk 
+    work, but most of what pulls my attention sits around networks and, lately, 
+    cybersecurity.
   </p>
+
+  <p class="links">
+    <a href="/blog/">blog</a>
+    <a href="https://github.com/arturLua">github</a>
+    <a href="https://www.linkedin.com/in/artur-rebeschini-18794b311/">linkedin</a>
+  </p>
+
+  <section class="section">
+    <h2 class="section-title">recent posts</h2>
+    <ul class="cards">
+      {recentPosts.map((post: any) => (
+        <li class="card">
+          <a href={post.url}>{post.frontmatter.title}</a>
+          <p>
+            <small>{new Date(post.frontmatter.pubDate).toISOString().slice(0, 10)}</small>
+          </p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <div slot="aside" class="visual-placeholder">placeholder</div>
 </BaseLayout>
 
 <style>
+  .links {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
   .links a {
     color: var(--accent);
     text-decoration: none;

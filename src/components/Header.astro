@@ -2,22 +2,46 @@
 ---
 <header>
   <nav>
-    <a href="/">home</a> · <a href="/about/">about</a> · <a href="/blog/">blog</a>
+    <a href="/">home</a>
+    <a href="/about/">about</a>
+    <a href="/blog/">blog</a>
   </nav>
 </header>
 
 <style>
   header {
-    padding-bottom: 2rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-bottom: 2.5rem;
   }
 
   nav {
-    margin-bottom: 1rem;
-    text-align: center;
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
   }
 
   nav a {
-    color: var(--accent);
+    position: relative;
+    color: var(--fg-muted);
     text-decoration: none;
+  }
+
+  nav a + a::before {
+    content: '';
+    position: absolute;
+    left: -0.7rem;
+    top: 0.2em;
+    height: 0.9em;
+    width: 1px;
+    background: var(--border);
+  }
+
+  nav a:hover,
+  nav a:focus {
+    color: var(--accent);
   }
 </style>
