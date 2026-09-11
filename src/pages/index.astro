@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
 
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const recentPosts = allPosts
@@ -22,8 +23,12 @@ const pageTitle = "Artur Rebeschini";
 
   <p class="links">
     <a href="/blog/">blog</a>
-    <a href="https://github.com/arturLua">github</a>
-    <a href="https://www.linkedin.com/in/artur-rebeschini-18794b311/">linkedin</a>
+    <a href="https://github.com/arturLua" aria-label="github" title="github">
+      <Icon name="simple-icons:github" width={20} height={20} />
+    </a>
+    <a href="https://www.linkedin.com/in/artur-rebeschini-18794b311/" aria-label="linkedin" title="linkedin">
+      <Icon name="simple-icons:linkedin" width={20} height={20} />
+    </a>
   </p>
 
   <section class="section">
@@ -53,5 +58,7 @@ const pageTitle = "Artur Rebeschini";
   .links a {
     color: var(--accent);
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
   }
 </style>
