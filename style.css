@@ -20,14 +20,34 @@ header {
 body {
     background-color: var(--color-background);
     color: var(--color-text);
-    font-family: 'Fahkwang-Regular';
+    font-family: 'BarlowCondensed';
+    font-weight: 300;
 }
 
 nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 0.4fr 1fr;
     align-items: center;
-    justify-content: space-evenly;
     padding: 16px 32px;
+    font-family: 'BarlowCondensed';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    color: var(--color-text);
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-center {
+    color: var(--color-text);
+    text-align: center;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 90%;
+    letter-spacing: -1px;
 }
 
 a {
@@ -36,8 +56,13 @@ a {
 }
 
 @font-face {
-    font-family: 'Fahkwang-Regular';
-    src: url("/fonts/Fahkwang-Regular.ttf");
-    font-weight: 400;
-    font-style: normal;
+    font-family: 'BarlowCondensed';
+    src: url("/fonts/BarlowCondensed-Light.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'BarlowCondensed';
+    src: url("/fonts/BarlowCondensed-Medium.ttf");
+    font-weight: 500;
 }
