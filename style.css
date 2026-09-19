@@ -37,10 +37,7 @@ a {
 
 @font-face {
     font-family: 'Fahkwang-Regular';
-    src:url('Fahkwang-Regular.ttf.woff') format('woff'),
-        url('Fahkwang-Regular.ttf.svg#Fahkwang-Regular') format('svg'),
-        url('Fahkwang-Regular.ttf.eot'),
-        url('Fahkwang-Regular.ttf.eot?#iefix') format('embedded-opentype'); 
-    font-weight: normal;
+    src: url("/fonts/Fahkwang-Regular.ttf");
+    font-weight: 400;
     font-style: normal;
 }
