@@ -7,14 +7,29 @@
 :root {
     --color-background: #0101f2;
     --color-text: #e0e0e0;
+    --color-placeholder: #2020ff;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    padding: 32px;
-    text-align: center;
-    font-size: 24px;
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 32px;
+    align-items: center;
+    padding: 64px 32px;
+}
+
+/* placeholder for image */
+.hero-image {
+    aspect-ratio: 3 / 4;
+    background-color: var(--color-placeholder);
+}
+
+.hero-title {
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 90%;
+    letter-spacing: -2px;
+    text-transform: uppercase;
 }
 
 body {
