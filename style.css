@@ -5,9 +5,12 @@
 }
 
 :root {
+    --space-side: 128px;   /* margem lateral do conteúdo */
     --color-background: #0101f2;
     --color-text: #e0e0e0;
     --color-placeholder: #2020ff;
+    --color-background-outer: #0000c8;
+    --color-outline: #2a2aff;
 }
 
 .hero {
@@ -15,7 +18,7 @@
     grid-template-columns: 1fr 1fr; 
     gap: 32px;
     align-items: center;
-    padding: 64px 32px;
+    padding: 64px var(--space-side);
 }
 
 /* placeholder for image */
@@ -32,18 +35,37 @@
     text-transform: uppercase;
 }
 
+/* fixed outline */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    border: 5px solid var(--color-outline);
+    pointer-events: none;
+    z-index: 10;
+}
+
 body {
-    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-background-outer);
     color: var(--color-text);
     font-family: 'BarlowCondensed';
     font-weight: 300;
+}
+
+#container {
+    width: 100%;
+    max-width: 1440px;
+    background-color: var(--color-background);
 }
 
 nav {
     display: grid;
     grid-template-columns: 1fr 0.4fr 1fr;
     align-items: center;
-    padding: 16px 32px;
+    padding: 16px var(--space-side);
     font-family: 'BarlowCondensed';
     font-weight: 500;
     font-size: 16px;
@@ -68,6 +90,24 @@ nav {
 a {
     color: var(--color-text);
     text-decoration: none;
+}
+
+.hero-buttons {
+    display: flex;
+    margin-top: 32px;
+}
+
+.button {
+    padding: 12px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.button-primary {
+    background-color: var(--color-text);
+    color: var(--color-background);
 }
 
 @font-face {
