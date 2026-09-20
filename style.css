@@ -7,7 +7,8 @@
 :root {
     --space-side: 128px;   /* margem lateral do conteúdo */
     --color-background: #0101f2;
-    --color-text: #e0e0e0;
+    --color-text: #dadada;
+    --color-text-highlight: #f7f7f7;
     --color-placeholder: #2020ff;
     --color-background-outer: #0000c8;
     --color-outline: #2a2aff;
@@ -65,11 +66,20 @@ nav {
     display: grid;
     grid-template-columns: 1fr 0.4fr 1fr;
     align-items: center;
-    padding: 16px var(--space-side);
+    padding: 48px var(--space-side) 0;
     font-family: 'BarlowCondensed';
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 2px;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-text-highlight);
 }
 
 .nav-links {
@@ -87,9 +97,22 @@ nav {
     letter-spacing: -1px;
 }
 
-a {
-    color: var(--color-text);
-    text-decoration: none;
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-socials {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-socials svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-text)
 }
 
 .hero-buttons {
