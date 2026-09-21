@@ -5,7 +5,7 @@
 }
 
 :root {
-    --space-side: 128px;   /* margem lateral do conteúdo */
+    --space-side: 128px;
     --color-background: #0101f2;
     --color-text: #dadada;
     --color-text-highlight: #f7f7f7;
@@ -143,4 +143,30 @@ a:hover {
     font-family: 'BarlowCondensed';
     src: url("/fonts/BarlowCondensed-Medium.ttf");
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+
+    :root {
+        --space-side: 24px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 48px;
+        letter-spacing: -1px;
+    }
+
+    nav {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 24px;
+    }
+
+    .nav-brand {
+        grid-column: 1 / -1;
+        order: -1;
+    }
 }
