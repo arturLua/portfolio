@@ -16,22 +16,43 @@
 
 .hero {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
-    align-items: center;
+    align-items: stretch;
     padding: 64px var(--space-side);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-about {
+    margin-top: 32px;
+    max-width: 522px;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.4px;
+    font-family: 'Barlow';
+}
+
+.hero-buttons {
+    display: flex;
+    margin-top: top;
+    padding-top: 32px;
 }
 
 /* placeholder for image */
 .hero-image {
-    aspect-ratio: 3 / 4;
+    width: 525px;
+    height: 520px;
     background-color: var(--color-placeholder);
 }
 
 .hero-title {
     font-weight: 300;
-    font-size: 72px;
-    line-height: 90%;
+    font-size: 62px;
+    line-height: 65%;
     letter-spacing: -2px;
     text-transform: uppercase;
 }
@@ -115,11 +136,6 @@ a:hover {
     fill: currentColor;
 }
 
-.hero-buttons {
-    display: flex;
-    margin-top: 32px;
-}
-
 .button {
     padding: 12px 20px;
     font-weight: 500;
@@ -143,6 +159,12 @@ a:hover {
     font-family: 'BarlowCondensed';
     src: url("/fonts/BarlowCondensed-Medium.ttf");
     font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Barlow';
+    src: url("/fonts/Barlow-Regular.ttf");
+    font-weight: 300;
 }
 
 @media (max-width: 768px) {
