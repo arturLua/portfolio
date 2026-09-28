@@ -108,6 +108,14 @@ a:hover {
     justify-content: space-around;
 }
 
+.nav-links a[aria-current="page"]::before {
+    content: "[ ";
+}
+
+.nav-links a[aria-current="page"]::after {
+    content: " ]";
+}
+
 .nav-center {
     color: var(--color-text);
     text-align: center;
