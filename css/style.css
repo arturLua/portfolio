@@ -56,6 +56,50 @@
     text-transform: uppercase;
 }
 
+.hero-now {
+    grid-template-columns: 1fr;
+}
+
+.hero-now .hero-title {
+    text-align: center;
+    font-weight: 500;
+}
+
+.hero-now .hero-text {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-now .hero-about {
+    max-width: 100%;
+}
+
+.hero-now .now-updated {
+    font-size: 26px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    opacity: 0.65;
+}
+
+.now-heading {
+    margin-top: 48px;
+    font-weight: 500;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.now-list {
+    margin-top: 16px;
+    padding-left: 24px;
+    font-family: 'Barlow';
+    font-size: 20px;
+    line-height: 150%;
+}
+
 /* fixed outline */
 body::before {
     content: "";
