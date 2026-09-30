@@ -6,12 +6,12 @@
 
 :root {
     --space-side: 128px;
-    --color-background: #0101f2;
-    --color-text: #dadada;
-    --color-text-highlight: #f7f7f7;
-    --color-placeholder: #2020ff;
-    --color-background-outer: #0000c8;
-    --color-outline: #2a2aff;
+    --color-background: #2b211b;
+    --color-text: #e3d5c1;
+    --color-text-highlight: #dbab62;
+    --color-placeholder: #35291f;
+    --color-background-outer: #201812;
+    --color-outline: #5a4738;
 }
 
 .hero {
@@ -54,6 +54,10 @@
     line-height: 65%;
     letter-spacing: -2px;
     text-transform: uppercase;
+}
+
+.hero-title strong {
+    color: var(--color-text-highlight);
 }
 
 .hero-now {
