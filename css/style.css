@@ -36,8 +36,20 @@
   font-family: "Barlow";
 }
 
+.hero-about a {
+  color: var(--color-text-highlight);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hero-about a:hover {
+  color: var(--color-text);
+}
+
 .hero-buttons {
   display: flex;
+  align-items: center; /* centraliza ícones na altura do botão */
+  gap: 24px; /* espaço entre o botão e os ícones */
   padding-top: 32px;
 }
 
@@ -182,16 +194,19 @@ a:hover {
 
 .nav-socials {
   display: flex;
-  gap: 16px;
+  gap: 22px;
 }
 
 .nav-socials svg {
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   fill: currentColor;
 }
 
 .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   padding: 12px 20px;
   font-weight: 500;
   font-size: 16px;
@@ -200,8 +215,23 @@ a:hover {
 }
 
 .button-primary {
-  background-color: var(--color-text);
-  color: var(--color-background);
+  background-color: var(--color-placeholder);
+  color: var(--color-text);
+  border: 1px solid var(--color-outline);
+  border-radius: 6px;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.button-primary svg {
+  width: 20px;
+  height: 20px;
+}
+
+.button-primary:hover {
+  color: var(--color-text-highlight);
+  border-color: var(--color-text-highlight);
 }
 
 @font-face {
